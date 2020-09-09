@@ -16,34 +16,27 @@ const Clients = new MongoClient(uri, {
     useUnifiedTopology: true
 })
 
+let snakedb
 
+Clients.connect(error => {
+    if (error) {
+        console.error(error)
+    }
+    snakedb = Clients.db("snakedb")
+})
 app.get("/sendtoclient", function (request, response) {
-    Clients.connect(error => {
+    snakedb.collection("scores").find({}).sort({
+        score: -1
+    }).toArray((error, element) => {
         if (error) {
             console.log(error)
         }
-
-        snakedb = Clients.db("snakedb")
-        snakedb.collection("scores").find({}).sort({
-            score: -1
-        }).toArray((error, element) => {
-            if (error) {
-                console.log(error)
-            }
-            response.json(element)
-        })
-
+        response.json(element)
     })
 })
 
 
 app.post("/api", (request, response) => {
-    Clients.connect(error => {
-        if (error) {
-            console.log(error)
-        }
-        snakedb = Clients.db("snakedb")
-        snakedb.collection("scores").insertOne(request.body)
-    })
+    snakedb.collection("scores").insertOne(request.body)
     response.end()
 })
