@@ -1,0 +1,146 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    animation: appear 0.76s;
+    transition: margin-left 700ms ease-in;
+    height: 76vh;
+    width: 40vw;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    border-radius: 10px;
+}
+
+.menu.activated {
+    animation: disappear 1s forwards;
+}
+
+
+.menu .menuoption {
+    width: 60%;
+    height: 15%;
+    margin: 40px 0px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    opacity: 85%;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    transition: transform 0.8s linear;
+
+}
+
+.menuoption:hover {
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 60%);
+}
+
+.menu .menuoption:hover {
+    transform: scale(1.2)
+}
+
+
+.instructions {
+    height: 90vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 700ms ease-in;
+    opacity: 0;
+    transform: translateX(-300%);
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.instructions.activated {
+    opacity: 1;
+    transform: translateX(0%)
+}
+
+
+.subinstr {
+    width: 70%;
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+    opacity: 85%;
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    transition: transform 0.8s linear;
+
+}
+
+.subinstr:hover {
+    transform: scale(1.2);
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 40%);
+}
+
+
+I {
+    padding: 0px 10px;
+    font-size: 25px;
+}
+
+.return {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    font-size: 25px;
+    text-decoration: none;
+    color: #4759be
+}
+
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-family: 'Anton', sans-serif;
+    font-size: 25px;
+}
+
+
+@keyframes appear {
+    from {
+        transform: translateX(-100%);
+        opacity: 0
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1
+    }
+}
+
+
+@keyframes disappear {
+    from {
+        transform: translateX(0);
+        opacity: 1
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "Snake game with database",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "snake"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.1"
+  },
+  "engines": {
+    "node": "12.18.3"
+  }
+}
