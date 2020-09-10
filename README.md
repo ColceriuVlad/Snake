@@ -12,6 +12,6 @@ heroku config:set uri_key="mongodb+srv://[user]:[password]@cluster0.l3ylu.gcp.mo
 
 Replace [user] with your cluster user and [password] with your cluster password
 
-If you wana run it locally, you have to create a .env file that contains the same environment variable and set it like this:
+If you want to run it locally, you have to create a .env file that contains the same environment variable and set it like this:
 
 uri_key = "mongodb://localhost:27017"
