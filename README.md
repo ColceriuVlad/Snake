@@ -4,7 +4,7 @@ You can check the finished version here:
 
 Heroku: https://snake-canvas-game.herokuapp.com/
 
-If you wana deploy your own version of the app to the cloud using Heroku, simply set a value for the uri_key environment variable as following:
+If you want to deploy your own version of the app to the cloud using Heroku, simply set a value for the uri_key environment variable as following:
 
 Go to MongoDB Atlas, create a user, create a free cluster and add a user to that cluster
 
